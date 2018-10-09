@@ -1,8 +1,18 @@
+:root {
+    --header-color: blue
+}
+
 body {
     font-family: Arial, Verdana, "Source Code Pro", sans-serif;
     background-color: grey;
 }
 
 h1 {
-    color: blue;
+    color: var(--header-color);
+    font-style: italic;
+    font-size: 20%;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: line-through;
+    text-align: left;
 }
