@@ -1,0 +1,12 @@
+ul {
+    list-style: circle outside;
+
+}
+
+thead {
+    background-color: blue;
+}
+
+legend {
+    border-radius: 50%;
+}
