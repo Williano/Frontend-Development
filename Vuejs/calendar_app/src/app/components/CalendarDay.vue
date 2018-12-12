@@ -1,14 +1,14 @@
 <template>
 
-  <div class="day column">
+  <div class="day column" v-on:click="setActiveDay(day.id)">
     <div class="day-banner has-text-centered">{{ day.abbvTitle }}</div>
     <div class="day-details">
       <div class="day-number">{{ day.id }}</div>
 
       <CalendarEvent v-for="(event, index) in day.events"
       v-bind:key="index"
-      v-bind:key="event"
-      v-bind:key="day" 
+      v-bind:event="event"
+      v-bind:day="day" 
       />
 
     </div>
@@ -18,12 +18,18 @@
 
 
 <script>
+  import { store } from '../store.js';
   import CalendarEvent from './CalendarEvent.vue';
 
 
 	export default {
 		name: 'CalendarDay',
 		props: ['day'],
+    methods: {
+      setActiveDay(dayId) {
+        store.setActiveDay(dayId);
+      }
+    },
     components: {
       CalendarEvent
     }
@@ -63,6 +69,6 @@
       border-right: 1px solid #8F8F8F;
     }
   }
-}
+
 
 </style>
