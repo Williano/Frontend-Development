@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h2 class="has-text-weight-bold">{{ productItem.title }} 
+    <h2 class="has-text-weight-bold">
+      <router-link
+        :to="'/products/' + productItem.id">
+          {{ productItem.title }}
+      </router-link>
       <span
         @click="addCartItem(productItem)"
         class="tag is-primary is-pulled-right has-text-white">
